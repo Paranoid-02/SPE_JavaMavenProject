@@ -33,4 +33,51 @@ class CalculatorTest {
         });
         assertEquals("Cannot divide by zero!", exception.getMessage());
     }
+
+    @Test
+    void testSquareRoot() {
+        assertEquals(2.0, calculator.squareRoot(4.0));
+        assertEquals(3.0, calculator.squareRoot(9.0));
+    }
+
+    @Test
+    void testSquareRootNegative() {
+        Exception exception = assertThrows(IllegalArgumentException.class, () -> {
+            calculator.squareRoot(-4.0);
+        });
+        assertEquals("Cannot calculate square root of a negative number!", exception.getMessage());
+    }
+
+    @Test
+    void testFactorial() {
+        assertEquals(120, calculator.factorial(5));
+        assertEquals(1, calculator.factorial(0));
+    }
+
+    @Test
+    void testFactorialNegative() {
+        Exception exception = assertThrows(IllegalArgumentException.class, () -> {
+            calculator.factorial(-5);
+        });
+        assertEquals("Cannot calculate factorial of a negative number!", exception.getMessage());
+    }
+
+    @Test
+    void testNaturalLog() {
+        assertEquals(1.0, calculator.naturalLog(Math.E), 0.0001);
+    }
+
+    @Test
+    void testNaturalLogNonPositive() {
+        Exception exception = assertThrows(IllegalArgumentException.class, () -> {
+            calculator.naturalLog(0);
+        });
+        assertEquals("Cannot calculate natural logarithm of a non-positive number!", exception.getMessage());
+    }
+
+    @Test
+    void testPower() {
+        assertEquals(8.0, calculator.power(2.0, 3.0));
+        assertEquals(1.0, calculator.power(5.0, 0.0));
+    }
 }
