@@ -2,7 +2,7 @@ pipeline {
     agent any
     environment {
         DOCKER_IMAGE_NAME = 'scientific-calculator'
-        GITHUB_REPO_URL = https://github.com/Paranoid-02/SPE_JavaMavenProject.git
+        GITHUB_REPO_URL = 'https://github.com/Paranoid-02/SPE_JavaMavenProject.git'
     }
     stages {
         stage('Checkout') {
