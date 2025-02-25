@@ -14,5 +14,5 @@
         image: paranoid02/scientific-calculator:latest
         state: started
         ports:
-          - "8080:8080"
+          - "8081:8080"
 
